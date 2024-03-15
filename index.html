@@ -5,19 +5,25 @@
 <head>
 
 <script>
+// const sqlite3 = require('sqlite3').verbose();
+// const db = new sqlite3.Database('./db.sqlite');
+
+// db.serialize(() => {           
+//   db.run("DROP TABLE Stocks");
+//   db.run("CREATE TABLE Stocks");
+//   db.run("INSERT INTO Stocks (AMD, MSFT, TSLA)");
+// });
 
 const socket = new WebSocket('wss://ws.finnhub.io?token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50');
  
 /// Connection opened -> Subscribe
 socket.addEventListener('open', function (event) {
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+    socket.send(JSON.stringify({'type':'trade', 'symbol': 'AAPL'}))
 });
 
 // Listen for messages
 socket.addEventListener('message', function (event) {
-    document.getElementById("test").innerText = event.data;
+    document.getElementById("test").innerHTML = "Messages: <br>" +  event.data;
     console.log('Message from server ', event.data);
 });
 
@@ -25,6 +31,31 @@ socket.addEventListener('message', function (event) {
  var unsubscribe = function(symbol) {
     socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
 }
+
+fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
+.then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    data.forEach(element => {
+        document.getElementById("news").innerHTML += "<h2>" + element["headline"] +"</h2>"
+        if( element["image"] != ""){
+            document.getElementById("news").innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
+        }
+        document.getElementById("news").innerHTML += "" + element["summary"] +"<br>"
+        console.log(element);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+window.setInterval(()=>{
+
+}, 5000);
 </script>
 
 <title>Example</title>
@@ -35,7 +66,11 @@ socket.addEventListener('message', function (event) {
 
 ...content goes here...
 
-<div id="test">
+<div id="test" style="max-width: 200px;">
+ 
+</div>
+
+<div id="news" style="max-width: 400px;">
  
 </div>
 
