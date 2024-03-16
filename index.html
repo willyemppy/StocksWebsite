@@ -13,6 +13,7 @@
 //   db.run("CREATE TABLE Stocks");
 //   db.run("INSERT INTO Stocks (AMD, MSFT, TSLA)");
 // });
+const alphaKey = "OWC8EWIQ70MN3O8O"
 
 const socket = new WebSocket('wss://ws.finnhub.io?token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50');
  
@@ -40,15 +41,47 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
     return response.json();
   })
   .then(data => {
-    console.log(data);
     data.forEach(element => {
         document.getElementById("news").innerHTML += "<h2>" + element["headline"] +"</h2>"
         if( element["image"] != ""){
             document.getElementById("news").innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
         }
-        document.getElementById("news").innerHTML += "" + element["summary"] +"<br>"
+        document.getElementById("news").innerHTML += "<br>" + element["summary"] +"<br>"
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+  fetch("https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=OWC8EWIQ70MN3O8O")
+.then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Stock data: ")
+    console.log(data);
+    console.log(data["most_actively_traded"]);
+    document.getElementById("stocks").innerHTML += "<h1>" + "Top Gainers" +"</h1>"
+    data["top_gainers"].forEach(element => {
+        document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2>" + element["price"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
+        
         console.log(element);
     });
+    document.getElementById("stocks").innerHTML += "<h1>" + "Top Lossers" +"</h1>"
+    data["top_losers"].forEach(element => {
+        document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2>" + element["price"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2  style=\"color: red;\">" + element["change_percentage"] +"</h2>"
+        
+        console.log(element);
+    });
+
   })
   .catch(error => {
     console.error('Error:', error);
@@ -62,16 +95,18 @@ window.setInterval(()=>{
 
 </head>
 
-<body style="background-color:yellowgreen;color:white;">
+<body>
 
 ...content goes here...
+<div style="width: 100%; overflow: hidden;">
 
-<div id="test" style="max-width: 200px;">
+
+<div id="news" style="width: 600px; float: left;">
  
 </div>
-
-<div id="news" style="max-width: 400px;">
+<div id="stocks" style="margin-left: 620px;">
  
+</div>
 </div>
 
 </body>
