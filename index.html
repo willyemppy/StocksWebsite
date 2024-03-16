@@ -68,7 +68,7 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
     document.getElementById("stocks").innerHTML += "<h1>" + "Top Gainers" +"</h1>"
     data["top_gainers"].forEach(element => {
         document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
-        document.getElementById("stocks").innerHTML += "<h2>" + element["price"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2>$" + element["price"] +"(+" +element["change_amount"]+ ")</h2>"
         document.getElementById("stocks").innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
         
         console.log(element);
@@ -76,7 +76,7 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
     document.getElementById("stocks").innerHTML += "<h1>" + "Top Lossers" +"</h1>"
     data["top_losers"].forEach(element => {
         document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
-        document.getElementById("stocks").innerHTML += "<h2>" + element["price"] +"</h2>"
+        document.getElementById("stocks").innerHTML += "<h2>$" + element["price"] +"(" +element["change_amount"]+ ")</h2>"
         document.getElementById("stocks").innerHTML += "<h2  style=\"color: red;\">" + element["change_percentage"] +"</h2>"
         
         console.log(element);
