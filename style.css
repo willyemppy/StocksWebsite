@@ -1,0 +1,273 @@
+body{
+    background-color: white;
+}
+@supports not (display: flex) {
+    #header {
+        background-color: darkgoldenrod;
+        text-align: center;
+        width: 1500px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: x-large;
+        
+    }
+
+    #registrationformcontainer{
+        background-color: beige;
+    }
+
+    #abcontent {
+        width: 1500px;
+        height: 950px;
+        padding-top: 10px; 
+        
+    }
+
+    #pic {
+    
+        width: 30%;
+        float: left;
+    }
+    #intro {
+        text-align: center;
+        background-color: beige;
+        font-size: xx-large;
+        width: 60%;
+        height: 945px;
+        float: right;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #iheader {
+        background-color: darkgoldenrod;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: x-large;
+    }
+
+    #container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    #centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+    }
+
+    #hinfo{
+        padding: 10px;
+        background-color:beige ;
+    }
+
+    
+
+}
+
+@supports (display: flex) {
+    @media screen and (min-width: 400px) {
+        #pic:hover{
+            color: #111;
+            background: greenyellow;
+            box-shadow: 0 0 100px white;
+        }
+        #header {
+            background-color: darkgoldenrod;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: x-large;
+            
+        }
+        #registrationformcontainer{
+            background-color: beige;
+        }
+        #abcontent{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 10px; 
+        }
+
+        #intro {
+            order: 2;
+            text-align: center;
+            background-color: beige;
+            font-size: xx-large;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #pic {
+           order: 1;
+        }
+
+
+
+
+
+        #imainbody{
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        
+        #iheader {
+            background-color: darkgoldenrod;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: x-large;
+        }
+
+        #hinfo{
+            background-color:beige ;
+            padding: 10px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: large;
+            line-height: 2em;
+        }
+
+        #aboutus{
+            background-color: #bc986a;
+            padding: 10px;
+            order: 1;
+            
+        }
+
+        #story{
+            background-color: #bc986a;
+            padding: 10px;
+            order: 2;
+            
+        }
+
+
+        #mission{
+            background-color: #bc986a;
+            padding: 10px;
+            order: 3;
+            
+        }
+
+
+        #apart{
+            background-color: #bc986a;
+            padding: 10px;
+            order: 3;
+            display: flex;
+            flex-flow: column;
+        }
+
+        #apartHeading{ 
+            order: 1;
+        }
+
+        #apartContent{
+            order: 2;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .apartElements{
+            padding-left: 2em;
+        }
+
+        #ifooter{
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(43, 18, 10);
+            color: white;
+        }
+
+        
+    }
+    @media screen and (min-width: 768px) {
+
+    }
+    @media screen and (min-width: 1024px) {
+
+    }
+    @media screen and (min-width: 800px) {
+
+    }
+    @media screen and (min-width: 1280px) {
+        
+    }
+    @media screen and (min-width: 1520px) {
+        body, html {
+            height: 100%;
+          }
+        #stocks{
+            overflow-x: auto;
+            text-align: center;
+            background-color: cadetblue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #news{
+            overflow-x: auto;
+            text-align: center;
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-grow: 4;
+            padding-top: 10px; 
+        }
+        .stockblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            
+        }
+        #iheader {
+            background-color: darkgoldenrod;
+            text-align: center;
+            font-size: x-large;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            background-image:   url('Picture1.jpg');
+   
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        
+    
+    }
+}
+/* #oldBookBackground{
+    background-color: black;
+   width: 2000px ;
+   height: 1000px;
+} */

@@ -42,11 +42,14 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
   })
   .then(data => {
     data.forEach(element => {
-        document.getElementById("news").innerHTML += "<h2>" + element["headline"] +"</h2>"
+      let div = document.createElement("div");
+        div.className = "stockblocks"
+        div.innerHTML += "<h2>" + element["headline"] +"</h2>"
         if( element["image"] != ""){
-            document.getElementById("news").innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
+          div.innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
         }
-        document.getElementById("news").innerHTML += "<br>" + element["summary"] +"<br>"
+        div.innerHTML += "<br>" + element["summary"] +"<br>"
+        document.getElementById("news").appendChild(div);
     });
   })
   .catch(error => {
@@ -62,25 +65,34 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
     return response.json();
   })
   .then(data => {
+    for(let i = 0; i<30;i++){
+      let div = document.createElement("div");
+        div.className = "stockblocks"
+        div.innerHTML += "<h2>" + i +"</h2>"
+        div.innerHTML += "<h2>$" + i +"(+" +i+ ")</h2>"
+        div.innerHTML += "<h2  style=\"color: green;\">" + i +"</h2>"
+        document.getElementById("stocks").appendChild(div);
+    }
     console.log("Stock data: ")
     console.log(data);
     console.log(data["most_actively_traded"]);
-    document.getElementById("stocks").innerHTML += "<h1>" + "Top Gainers" +"</h1>"
-    data["top_gainers"].forEach(element => {
-        document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
-        document.getElementById("stocks").innerHTML += "<h2>$" + element["price"] +"(+" +element["change_amount"]+ ")</h2>"
-        document.getElementById("stocks").innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
+    // data["top_gainers"].forEach(element => {
+    //     let div = document.createElement("div");
+    //     div.className = "stockblocks"
+    //     div.innerHTML += "<h2>" + element["ticker"] +"</h2>"
+    //     div.innerHTML += "<h2>$" + element["price"] +"(+" +element["change_amount"]+ ")</h2>"
+    //     div.innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
+    //     document.getElementById("stocks").appendChild(div);
+    //     console.log(element);
+    // });
+    // document.getElementById("stocks").innerHTML += "<h1>" + "Top Lossers" +"</h1>"
+    // data["top_losers"].forEach(element => {
+    //     document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
+    //     document.getElementById("stocks").innerHTML += "<h2>$" + element["price"] +"(" +element["change_amount"]+ ")</h2>"
+    //     document.getElementById("stocks").innerHTML += "<h2  style=\"color: red;\">" + element["change_percentage"] +"</h2>"
         
-        console.log(element);
-    });
-    document.getElementById("stocks").innerHTML += "<h1>" + "Top Lossers" +"</h1>"
-    data["top_losers"].forEach(element => {
-        document.getElementById("stocks").innerHTML += "<h2>" + element["ticker"] +"</h2>"
-        document.getElementById("stocks").innerHTML += "<h2>$" + element["price"] +"(" +element["change_amount"]+ ")</h2>"
-        document.getElementById("stocks").innerHTML += "<h2  style=\"color: red;\">" + element["change_percentage"] +"</h2>"
-        
-        console.log(element);
-    });
+    //     console.log(element);
+    // });
 
   })
   .catch(error => {
@@ -92,22 +104,34 @@ window.setInterval(()=>{
 </script>
 
 <title>Example</title>
-
+<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
 <body>
+  <div id="iheader" >
+    <!-- <div id="stockBackground">
+      <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
+    </div> -->
+    <h1 class="bottom-left"> Easy money</h1>
+      <div class="topnav centered" >
+          <a class="active" href="index.html">Home</a>
+          <a href="aboutme.html">About</a>
+          <a href="registrationForm.html">New Users</a>
+        </div>
+      
+      
+      </div>
 
 ...content goes here...
-<div style="width: 100%; overflow: hidden;">
 
-
-<div id="news" style="width: 600px; float: left;">
+<div id="stocks">
  
 </div>
-<div id="stocks" style="margin-left: 620px;">
+<div id="news" >
  
 </div>
-</div>
+
+
 
 </body>
 
