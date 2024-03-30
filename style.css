@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: black;
 }
 @supports not (display: flex) {
     #header {
@@ -214,15 +214,50 @@ body{
         body, html {
             height: 100%;
           }
-        #stocks{
-            overflow-x: auto;
+          #topstocks{
             text-align: center;
             background-color: cadetblue;
+          }
+        #topstockcotainers{
+            overflow-x: auto;
+            text-align: center;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
            
             padding-top: 10px; 
+        }
+        #worststocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #worststockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #activestocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #activestockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #stocks{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            
         }
         #news{
             overflow-x: auto;
@@ -242,6 +277,17 @@ body{
             padding: 1em;
             margin-bottom: 1em;
             
+            
+        }
+
+        .newsblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            min-width: 28em;
         }
         #iheader {
             background-color: darkgoldenrod;
@@ -253,7 +299,7 @@ body{
             flex-wrap: nowrap;
             justify-content: flex-end;
             background-image:   url('Picture1.jpg');
-   
+            
             height: 100%;
             /* Center and scale the image nicely */
             background-position: center;
