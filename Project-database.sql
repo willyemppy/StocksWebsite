@@ -1,3 +1,4 @@
+--Emperor Anuku
 CREATE DATABASE IF NOT EXISTS Stocks_Website;
 
 USE Stocks_Website;
@@ -12,5 +13,5 @@ CREATE TABLE IF NOT EXISTS Users (
 INSERT INTO Users (username, Securepassword, permissions)
 VALUES 
 /* Admin has permission level 3 and customer has permissio level 2 */
-    ('admin', 'password', 3),    
-    ('customer', 'password', 2);
+    ('admin', 'password123', 3),    
+    ('customer', 'password123', 2);

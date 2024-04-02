@@ -1,4 +1,5 @@
 <?php
+//Emperor Anuku
 // Database configuration
 $servername = "127.0.0.1";
 $username = "root"; // MySQL username
