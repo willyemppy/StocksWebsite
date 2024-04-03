@@ -386,8 +386,8 @@ body{
         }
         #pic {
            order: 1;
-        }
-
+        }*/
+            
 
 
 
@@ -475,7 +475,15 @@ body{
             padding: 10px;
             background-color:  beige;
             color: rgb(4, 0, 0);
-        }*/
+        }
+
+        .apartElements .teamIcon {
+            width: 150px; /* Example width, adjust as needed */
+            height: 150px; /* Example height, adjust as needed */
+            display: block; /* Makes the image a block-level element */
+            margin: 0 auto 20px; /* Centers the image and adds space below */
+            border-radius: 50%; /* Optional: creates a circular image */
+          }
 
         
     }
