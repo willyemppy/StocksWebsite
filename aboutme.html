@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<script>
+  window.onload = function() { //Boris
+    var images = [
+        'url("Picture1.jpg")',
+        'url("Picture2.jpg")',
+        'url("Picture3.jpg")'
+        
+    ];
+
+    var currentIndex = 0;
+    var header = document.getElementById('iheader');
+    setInterval(function() {
+        header.style.opacity = 0; // Start fading out
+
+        // Change image after fade out completes
+        setTimeout(function() {
+            currentIndex = (currentIndex + 1) % images.length; // Cycle through the images
+            header.style.backgroundImage = images[currentIndex];
+            header.style.opacity = 1; // Fade back in
+        }, 1500); // This matches the CSS transition time
+    }, 10000); // Adjust overall interval as needed
+};
+</script>
+<title>Easy money</title>
+<meta name="author" content="Easy Money">
+<meta name="index" content="index">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body onload = "startTimer()">
+  <div id="iheader" >
+    <div id="headerBackground"></div> <!-- Container for the background images -->
+    
+      <!-- <div id="stockBackground">
+        <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
+      </div> -->
+      <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
+      
+      <div id="nav">
+        <nav class="menu">
+            <a class="menulink" href="index.html">Home</a>
+            <a class="menulink" href="registrationForm.html">New Users</a>
+            <a class="menulink" href="Login.php">Login</a>
+        </nav>
+      </div>
+        </div>
+<div id="hinfo">
+<div id="aboutus">
+<h2>About Us</h2>
+Welcome to Stoic Bookstore, where the love for literature meets the joy of discovery. We are more than just a bookstore; we are a haven for book enthusiasts, a sanctuary for storytellers, and a community that celebrates the written word.
+</div>
+
+<div id="story">
+<h2>Our Story</h2>
+Founded in 2024, Stoic Bookstore emerged from a shared passion for literature and a dream to create a space that goes beyond selling books. Our journey began with a simple belief – that books have the power to transport, inspire, and connect us all.
+</div>
+<div id="mission">
+<h2>Our Mission</h2>
+At Stoic Bookstore, our mission is to foster a love for reading, provide a curated selection of diverse and engaging titles, and create an environment where book lovers of all ages can feel at home. We strive to be more than just a store; we want to be your literary companion on every chapter of your reading journey.
+</div>
+<div id="apart">
+  <div id="apartHeading">
+<h2>What Sets Us Apart</h2>
+</div>
+<div id="apartContent">
+<div id="community" class="apartElements">
+<h3 >Community Engagement</h3>
+We believe in the power of community, and our events and book clubs reflect that. Join us for author signings, book discussions, and storytelling sessions that bring people together to share their love for literature.
+</div>
+<div id="personalized" class="apartElements">
+<h3 >Personalized Service</h3>
+Our knowledgeable and friendly staff is here to assist you in finding the perfect book. Whether you're seeking a recommendation or searching for a rare gem, we are dedicated to providing personalized service to ensure your reading experience is truly exceptional.
+</div>
+<div id="ambiance" class="apartElements">
+<h3>Comfortable Ambiance</h3>
+Step into stoic bookstore and feel the cozy ambiance that invites you to linger. Enjoy a cup of coffee as you explore our shelves, find a quiet corner to dive into a new book, or engage in conversations with fellow book enthusiasts.
+</div>
+<div id="join" class="apartElements">
+<h3 >Join Us on This Stoic Journey</h3>
+At Stoic Bookstore, we invite you to be a part of our literary journey. Explore the pages of your favorite stories, discover new authors, and share the joy of reading with a community that values the written word as much as you do.
+</div>
+</div>
+
+</div>
+</div>
+
+<footer id="ifooter">
+  Investment involves risks, including the loss of principal. The information on this website is for educational purposes only and does not constitute financial advice or recommendations. Please consult with a financial advisor for personalized advice before making any trading decisions.
+
+</footer>
+</div>
+</body>
+</html>

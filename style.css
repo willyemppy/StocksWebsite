@@ -170,14 +170,14 @@ body{
         }
 
         #aboutus{
-            background-color: #bc986a;
+            background-color: cadetblue;
             padding: 10px;
             order: 1;
             
         }
 
         #story{
-            background-color: #bc986a;
+            background-color: cadetblue;
             padding: 10px;
             order: 2;
             
@@ -185,7 +185,7 @@ body{
 
 
         #mission{
-            background-color: #bc986a;
+            background-color: cadetblue;
             padding: 10px;
             order: 3;
             
@@ -193,7 +193,7 @@ body{
 
 
         #apart{
-            background-color: #bc986a;
+            background-color:  cadetblue;
             padding: 10px;
             order: 3;
             display: flex;
@@ -206,21 +206,27 @@ body{
 
         #apartContent{
             order: 2;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
+            display: grid; 
+            justify-content: start;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: minmax(100px, auto);
             gap: 10px;
+            justify-items: center;
+            width: 80%; 
+            margin: 0 auto;
         }
 
         .apartElements{
-            padding-left: 2em;
+            background-color: rgb(108, 184, 187); 
+            padding: 20px; 
+            border: 2px solid #ccc; 
         }
 
         #ifooter{
             text-align: center;
             padding: 10px;
-            background-color: rgb(43, 18, 10);
-            color: white;
+            background-color:  beige;
+            color: rgb(4, 0, 0);
         }
 
         
