@@ -327,12 +327,16 @@ body{
             justify-content: flex-end;
             background-image:   url('Picture1.jpg');
             
+            transition: opacity 2s ease-in-out; /*Fading*/
+            opacity: 1.2; /* Start fully visible */
+
             height: 100%;
             /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         #nav .menu {
             text-align: center;
             text-wrap: wrap;

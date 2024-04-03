@@ -124,6 +124,28 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
 window.setInterval(()=>{
 
 }, 5000);
+
+window.onload = function() {
+    var images = [
+        'url("Picture1.jpg")',
+        'url("Picture2.jpg")',
+        'url("Picture3.jpg")'
+        
+    ];
+
+    var currentIndex = 0;
+    var header = document.getElementById('iheader');
+    setInterval(function() {
+        header.style.opacity = 0; // Start fading out
+
+        // Change image after fade out completes
+        setTimeout(function() {
+            currentIndex = (currentIndex + 1) % images.length; // Cycle through the images
+            header.style.backgroundImage = images[currentIndex];
+            header.style.opacity = 1; // Fade back in
+        }, 1500); // This matches the CSS transition time
+    }, 10000); // Adjust overall interval as needed
+};
 </script>
 
 <title>Example</title>
@@ -132,6 +154,7 @@ window.setInterval(()=>{
 
 <body>
   <div id="iheader" >
+  <div id="headerBackground"></div> <!-- Container for the background images -->
   
     <!-- <div id="stockBackground">
       <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
