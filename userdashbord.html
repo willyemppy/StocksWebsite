@@ -7,28 +7,20 @@
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <script>
     const socket = new WebSocket('wss://ws.finnhub.io?token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50');
+    var lastStock = "";
     socket.addEventListener('message', function (event) {
         console.log('Message from server ', event.data);
             var stock = document.getElementById("stockdetails");
            // stock.innerText = JSON.stringify(JSON.parse(event.data)["data"]);
-           var list = JSON.stringify(JSON.parse(event.data)["data"]);
+           var list = (JSON.parse(event.data)["data"]);
            console.log(list);
            list.forEach(element=>{
             let stockid = element["s"];
             let stockprice = element["p"];
-            let div = document.getElementById(stockid);
-            if(div == null){
-                div = document.createElement("div");
-                div.id = stockid;
-                div.className = "stockblocks"
-             div.innerHTML += "<h2>" + stockid +"</h2>"
-             div.innerHTML += "<h2>$" + stockprice + "</h2>"
-            stock.appendChild(div);
-            }else{
-            div.innerHTML = "";
-             div.innerHTML += "<h2>" + stockid +"</h2>"
-             div.innerHTML += "<h2>$" + stockprice + "</h2>"
-            }
+            stock.innerHTML = "";
+            stock.innerHTML += "<h2>" + stockid +"</h2>"
+            stock.innerHTML += "<h2>$" + stockprice + "</h2>"
+           
            });
            
             // div.innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
@@ -37,12 +29,20 @@
         });
     function getCompanyDetails(){
         console.log("in getcompanydetails function");
+       
+        if(lastStock != ""){
+            socket.send(JSON.stringify({'type':'unsubscribe','symbol': lastStock}))
+        }
+
         var company = document.getElementById("company").value;
         console.log(company);
-        
-        // Connection opened -> Subscribe
-
-        socket.send(JSON.stringify({'type':'subscribe', 'symbol': company}))
+        if(company == ""){
+            return;
+        }
+        lastStock = company;
+        var stock = document.getElementById("stockdetails");
+        stock.innerHTML = "";
+        socket.send(JSON.stringify({'type':'subscribe', 'symbol': company}));
 
 
         // Listen for messages
@@ -59,14 +59,9 @@
         //     // console.log(element);
         // });
 
-        // Unsubscribe
-        var unsubscribe = function(symbol) {
-            socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
-        }
-        if(company == ""){
-            return;
-        }
-        fetch("https://finnhub.io/api/v1/stock/symbol?exchange=US&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
+        
+        
+        fetch("https://finnhub.io/api/v1/stock/profile2?symbol=" + company + "&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
             .then(response => {
                 if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -74,13 +69,45 @@
                 return response.json();
             })
             .then(data => {
-                var list = document.getElementById('companies');
-                data.forEach(element => {
+                var profileDiv = document.getElementById('companiesprofile');
+                profileDiv.innerHTML = "";
+                profileDiv.innerHTML += "<img src=\"" + data["logo"]+"\"><br>";
+                profileDiv.innerHTML += data["name"]+ "<br>";
+                profileDiv.innerHTML += "Contry: "  +data["country"]+ "(" + data["currency"] +")<br>";
+                profileDiv.innerHTML += "Field: "  +data["finnhubIndustry"] + " IPO: " + data["ipo"] +" <br>";
+                profileDiv.innerHTML += "Market Capitalization: "  +data["marketCapitalization"] + "<br>";
+                profileDiv.innerHTML += "Share Outstanding: "  +data["shareOutstanding"] + "<br>";
+                
 
-                   
-                });
             })
             .catch(error => { console.error('Error:', error);
+            });
+
+
+             
+       
+
+            fetch("https://finnhub.io/api/v1/company-news?symbol=" + company + "&from=2023-07-03&to=2024-04-03&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                data.forEach(element => {
+                let div = document.createElement("div");
+                    div.className = "newsblocks"
+                    div.innerHTML += "<h2>" + element["headline"] +"</h2>"
+                    if( element["image"] != ""){
+                    div.innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
+                    }
+                    div.innerHTML += "<br>" + element["summary"] +"<br>"
+                    document.getElementById("companyNews").appendChild(div);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
     }
 </script>
@@ -120,9 +147,16 @@
    
     
 </div>
-
+<div id="companieInfo">
 <div id="stockdetails">
    
 </div>
+
+<div id="companiesprofile">
+
+</div>
+</div>
+<div id="companyNews"></div>
+
 </body>
 </html>
