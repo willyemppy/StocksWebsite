@@ -2,6 +2,70 @@ body{
     background-color: white;
 }
 @supports not (display: flex) {
+    
+    .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 100px;
+        background-color: #ebebeb;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .login-container h2 {
+        text-align: center;
+    }
+    
+    .loginform-group {
+        margin-bottom: 30px;
+    }
+    
+    .loginlabel {
+        display: block;
+        font-weight: bold;
+    }
+    
+    .logintext-input,
+    .loginpassword-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    .loginsubmit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: cadetblue;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .loginsubmit-button:hover {
+        background-color: #ccc;
+    }
+    
+    .loginsignup-button {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: cadetblue;
+        font-weight: bold;
+    }
+    
+    .loginsignup-button:hover {
+        background-color: #ccc;
+    }
     body, html {
         height: 50%;
       }
@@ -131,6 +195,70 @@ body{
 
 @supports (display: flex) {
     @media screen and (min-width: 400px) {
+        
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 100px;
+            background-color: #ebebeb;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-container h2 {
+            text-align: center;
+        }
+        
+        .loginform-group {
+            margin-bottom: 30px;
+        }
+        
+        .loginlabel {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .logintext-input,
+        .loginpassword-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .loginsubmit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .loginsubmit-button:hover {
+            background-color: #ccc;
+        }
+        
+        .loginsignup-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: cadetblue;
+            font-weight: bold;
+        }
+        
+        .loginsignup-button:hover {
+            background-color: #ccc;
+        }
         body, html {
             height: 50%;
           }
@@ -347,8 +475,8 @@ body{
         }
 
         .apartElements .teamIcon {
-            width: 150px; /* Example width, adjust as needed */
-            height: 150px; /* Example height, adjust as needed */
+            width: 200px; /* Example width, adjust as needed */
+            height: 210px; /* Example height, adjust as needed */
             display: block; /* Makes the image a block-level element */
             margin: 0 auto 20px; /* Centers the image and adds space below */
             border-radius: 50%; /* Optional: creates a circular image */
@@ -357,6 +485,70 @@ body{
         
     }
     @media screen and (max-width: 768px) {
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 100px;
+            background-color: #ebebeb;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-container h2 {
+            text-align: center;
+        }
+        
+        .loginform-group {
+            margin-bottom: 30px;
+        }
+        
+        .loginlabel {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .logintext-input,
+        .loginpassword-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .loginsubmit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .loginsubmit-button:hover {
+            background-color: #ccc;
+        }
+        
+        .loginsignup-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: cadetblue;
+            font-weight: bold;
+        }
+        
+        .loginsignup-button:hover {
+            background-color: #ccc;
+        }
+        
         body, html {
             height: 50%;
           }
@@ -485,7 +677,179 @@ body{
             color: white;
         }
     }
-    
+    @media screen and (min-width: 1520px) {
+        body, html {
+            height: 50%;
+          }
+          #topstocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #topstockcotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #worststocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #worststockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #activestocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #activestockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #stocks{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            
+        }
+        #news{
+            overflow-x: auto;
+            text-align: center;
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-grow: 4;
+            padding-top: 10px; 
+        }
+        .stockblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            
+            
+        }
+
+        .newsblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            min-width: 28em;
+        }
+        #iheader {
+            background-color: darkgoldenrod;
+            text-align: center;
+            font-size: x-large;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            background-image:   url('Picture1.jpg');
+            
+            transition: opacity 2s ease-in-out; /*Fading*/
+            opacity: 1.2; /* Start fully visible */
+
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #nav .menu {
+            text-align: center;
+            text-wrap: wrap;
+            justify-content: center;
+            display: flex;
+            padding: 10px;
+            gap: 20px;
+            background-color: transparent;
+        }
+        
+        #nav .menulink {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        #nav .menulink:hover {
+            background-color: cadetblue;
+            color: white;
+        }
+
+
+        #companieInfo{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content:space-between;
+        }
+        
+        .search-container {
+            position: relative;
+            margin: 20px auto;
+            width: 300px; /* Adjust width as needed */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content:space-between;
+            gap: 10px;
+        }
+
+        /* Styles for the search input */
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* Styles for the search button */
+        .search-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Hover effect for the search button */
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+    }
 }
 /* #oldBookBackground{
     background-color: black;

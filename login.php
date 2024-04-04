@@ -58,25 +58,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-<div >
+<div id="iheader">
+    <div id="headerBackground"></div> <!-- Container for the background images -->
+
+    <div id="stockBackground">
+        <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
+    </div>
+    <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
+
+    <div id="nav">
+        <nav class="menu">
+            <a class="menulink" href="index.html">Home</a>
+            <a class="menulink" href="aboutme.html">About</a>
+            <a class="menulink" href="registrationForm.html">New Users</a>
+            <a class="menulink" href="Login.php">Login</a>
+        </nav>
+    </div>
+</div>
+
+<div class="login-container">
     <h2>Login</h2>
-        <a href="SignUp.php" target="_blank" class="loginsignup-button">Sign Up</a> <!--Open SignUp page on a new tab -->
-    </div>
+    <a href="SignUp.php" target="_blank" class="loginsignup-button">Sign Up</a> <!--Open SignUp page on a new tab -->
+    
     <?php if (isset($error_message)) echo "<p>$error_message</p>"; ?> <!-- Echo Invalid username or password. or "Username and password are required."  -->
-    <div class="loginmain">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="loginform"> <!-- POST credentials to this file itself -->
-            <div class="loginform-group">
-                <label for="username" class="loginlabel">Username:</label>
-                <input type="text" id="username" name="username" required class="logintext-input">
-            </div>
-            <div class="loginform-group">
-                <label for="password" class="loginlabel">Password:</label>
-                <input type="password" id="password" name="password" required class="loginpassword-input">
-            </div>
-            <input type="submit" value="Login" class="loginsubmit-button">
-        </form>
-    </div>
+
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="loginform">
+        <div class="loginform-group">
+            <label for="username" class="loginlabel">Username:</label>
+            <input type="text" id="username" name="username" required class="logintext-input">
+        </div>
+        <div class="loginform-group">
+            <label for="password" class="loginlabel">Password:</label>
+            <input type="password" id="password" name="password" required class="loginpassword-input">
+        </div>
+        <input type="submit" value="Login" class="loginsubmit-button">
+    </form>
+</div>
 </body>
 </html>
