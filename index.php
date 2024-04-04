@@ -90,6 +90,7 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
         console.log(element);
     });
     
+    
     data["top_losers"].forEach(element => {
       let div = document.createElement("div");
         div.className = "stockblocks"
