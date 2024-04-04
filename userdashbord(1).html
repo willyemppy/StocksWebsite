@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>User Dashbord</title>
+<meta name="author" content="Raj Nasit">
+<meta name="description" content="About me page">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script>
+    const socket = new WebSocket('wss://ws.finnhub.io?token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50');
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+            var stock = document.getElementById("stockdetails");
+           // stock.innerText = JSON.stringify(JSON.parse(event.data)["data"]);
+           var list = JSON.stringify(JSON.parse(event.data)["data"]);
+           console.log(list);
+           list.forEach(element=>{
+            let stockid = element["s"];
+            let stockprice = element["p"];
+            let div = document.getElementById(stockid);
+            if(div == null){
+                div = document.createElement("div");
+                div.id = stockid;
+                div.className = "stockblocks"
+             div.innerHTML += "<h2>" + stockid +"</h2>"
+             div.innerHTML += "<h2>$" + stockprice + "</h2>"
+            stock.appendChild(div);
+            }else{
+            div.innerHTML = "";
+             div.innerHTML += "<h2>" + stockid +"</h2>"
+             div.innerHTML += "<h2>$" + stockprice + "</h2>"
+            }
+           });
+           
+            // div.innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
+            // document.getElementById("topstockcotainers").appendChild(div);
+            // console.log(element);
+        });
+    function getCompanyDetails(){
+        console.log("in getcompanydetails function");
+        var company = document.getElementById("company").value;
+        console.log(company);
+        
+        // Connection opened -> Subscribe
+
+        socket.send(JSON.stringify({'type':'subscribe', 'symbol': company}))
+
+
+        // Listen for messages
+        // socket.addEventListener('message', function (event) {
+        //     console.log('Message from server ', event.data);
+        //     // var stock = document.getElementById("stockdetails");
+        //     // let div = document.getElementById()
+        //     // let div = document.createElement("div");
+        //     // div.className = "stockblocks"
+        //     // div.innerHTML += "<h2>" + element["ticker"] +"</h2>"
+        //     // div.innerHTML += "<h2>$" + element["price"] +"(+<span style=\"color: green;\">" +element["change_amount"]+ "</span>)</h2>"
+        //     // div.innerHTML += "<h2  style=\"color: green;\">" + element["change_percentage"] +"</h2>"
+        //     // document.getElementById("topstockcotainers").appendChild(div);
+        //     // console.log(element);
+        // });
+
+        // Unsubscribe
+        var unsubscribe = function(symbol) {
+            socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
+        }
+        if(company == ""){
+            return;
+        }
+        fetch("https://finnhub.io/api/v1/stock/symbol?exchange=US&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var list = document.getElementById('companies');
+                data.forEach(element => {
+
+                   
+                });
+            })
+            .catch(error => { console.error('Error:', error);
+            });
+    }
+</script>
+</head>
+<body>
+    <h1>Page Title</h1>
+<div>
+    <form onsubmit="event.preventDefault(); getCompanyDetails();">
+        <input placeholder="Search.." list="companies" id="company">
+        <datalist id="companies"></datalist>
+
+        <script>
+            fetch("https://finnhub.io/api/v1/stock/symbol?exchange=US&token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50")
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var list = document.getElementById('companies');
+                data.forEach(element => {
+                    //console.log(element);
+                    var option = document.createElement('option');
+                    option.text = element["description"];
+                    option.value = element["symbol"];
+                    list.appendChild(option);
+                });
+            })
+            .catch(error => { console.error('Error:', error);
+            });
+            
+
+        </script>
+        <input type="submit">
+    </form>
+   
+    
+</div>
+
+<div id="stockdetails">
+   
+</div>
+</body>
+</html>
