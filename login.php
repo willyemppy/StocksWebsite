@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav class="menu">
             <a class="menulink" href="index.html">Home</a>
             <a class="menulink" href="aboutme.html">About</a>
-            <a class="menulink" href="registrationForm.html">New Users</a>
+            <a class="menulink" href="SignUp.php">New Users</a>
             <a class="menulink" href="Login.php">Login</a>
         </nav>
     </div>
