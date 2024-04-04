@@ -146,6 +146,40 @@ window.onload = function() { //Boris
         }, 1500); // This matches the CSS transition time
     }, 10000); // Adjust overall interval as needed
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('topstockcotainers');
+  const nextBtn = document.querySelector('#topstocks .next');
+  const prevBtn = document.querySelector('#topstocks .prev');
+
+  function smoothScrollBy(distance, duration) { //distance is the num of pixels to scroll 
+    let initialPosition = container.scrollLeft; //and duration is the time in ms over which the scroll should occur
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      let timeElapsed = currentTime - startTime;
+      let progress = Math.min(timeElapsed / duration, 1); //it will calculate the current scroll position
+
+      container.scrollLeft = initialPosition + (distance * progress);
+
+      if (timeElapsed < duration) window.requestAnimationFrame(animation);
+    }
+
+    window.requestAnimationFrame(animation); //for smooth animations
+  }
+
+  nextBtn.addEventListener('click', () => {
+    smoothScrollBy(container.clientWidth, 700); // Scroll right smoothly over 700ms
+  });
+
+  prevBtn.addEventListener('click', () => {
+    smoothScrollBy(-container.clientWidth, 700); // Scroll left smoothly over 700ms
+  });
+});
+
+
+
 </script>
 
 <title>Example</title>
@@ -172,24 +206,38 @@ window.onload = function() { //Boris
       </div>
 
 <div id="stoks">
-<div id="topstocks">
- <h1>Top preformas</h1>
- <div id="topstockcotainers"></div>
+  
+  
+    <div class="stock-section" id="topstocks">
+    <h1>Top preformas</h1>
+    <div class="stock-container" id="topstockcotainers"></div>
+    <button class="prev">&#10094;</button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next">&#10095;</button> <!-- Right arrow for next 6 stocks -->
+    </div>
+
+    <div class="stock-section" id="worststocks">
+      <h1>Worst preformas</h1>
+      <div class="stock-container" id="worststockscotainers"></div>
+    </div>
+    <div class="stock-section" id="activestocks">
+      <h1>Most active</h1>
+      <div class="stock-container" id="activestockscotainers"></div>
+    </div>
 </div>
-<div id="worststocks">
-  <h1>Worst preformas</h1>
-  <div id="worststockscotainers"></div>
- </div>
- <div id="activestocks">
-  <h1>Most active</h1>
-  <div id="activestockscotainers"></div>
- </div>
-</div>
+
 <div id="news" >
  
 </div>
 
-
+<div id="footer">     
+  <footer>
+      <br><p><strong><A href="aboutme.html">Contact Us</A></strong> <br><br>
+          Address: 1385 Woodroffe Ave, Ottawa, ON K2G 1V8<br>
+          Phone Number: 1-(888)-888-8888<br>
+          Email:<a href="mailto:EasyMoney@gmail.com?subject=From%20About%20Me%20Page"> EasyMoney@gmail.com</a><br>
+      </p>
+  </footer>  
+  </div>
 
 </body>
 

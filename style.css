@@ -70,16 +70,17 @@ body{
         height: 50%;
       }
       #topstocks{
+        position: relative;
+        width: 100%;
         text-align: center;
         background-color: cadetblue;
       }
     #topstockcotainers{
-        overflow-x: auto;
+        overflow-x: hidden;
         text-align: center;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-       
         padding-top: 10px; 
     }
     #worststocks{
@@ -189,7 +190,28 @@ body{
         background-color: cadetblue;
         color: white;
     }
+    #footer {
+        background-color: #ccc;
+        color: black;
+        clear: both;
+        text-align: center;
+        width: 100%;
+        font-size: large;
+        padding: 10px;
+    }
     
+    #footer a {
+        color: #0022ff;
+        background-color: transparent;
+        text-decoration: none;
+        padding: 0;
+    }
+    
+    #footer a:hover {
+        background-color: transparent;
+        color: darkblue;
+    }
+
 
 }
 
@@ -265,9 +287,10 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -475,13 +498,35 @@ body{
         }
 
         .apartElements .teamIcon {
-            width: 150px; /* Example width, adjust as needed */
-            height: 150px; /* Example height, adjust as needed */
+            width: 200px; /* Example width, adjust as needed */
+            height: 210px; /* Example height, adjust as needed */
             display: block; /* Makes the image a block-level element */
             margin: 0 auto 20px; /* Centers the image and adds space below */
             border-radius: 50%; /* Optional: creates a circular image */
           }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
+        }
 
+       
         
     }
     @media screen and (max-width: 768px) {
@@ -555,9 +600,10 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -676,6 +722,27 @@ body{
             background-color: cadetblue;
             color: white;
         }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
+        }
     }
     @media screen and (min-width: 1520px) {
         body, html {
@@ -684,14 +751,15 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-           
+        
             padding-top: 10px; 
         }
         #worststocks{
@@ -884,7 +952,30 @@ body{
         .search-button:hover {
             background-color: #0056b3;
         }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
+        }
     }
+
+   
 }
 /* #oldBookBackground{
     background-color: black;
