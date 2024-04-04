@@ -2,6 +2,70 @@ body{
     background-color: white;
 }
 @supports not (display: flex) {
+    
+    .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 100px;
+        background-color: #ebebeb;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .login-container h2 {
+        text-align: center;
+    }
+    
+    .loginform-group {
+        margin-bottom: 30px;
+    }
+    
+    .loginlabel {
+        display: block;
+        font-weight: bold;
+    }
+    
+    .logintext-input,
+    .loginpassword-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    .loginsubmit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: cadetblue;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .loginsubmit-button:hover {
+        background-color: #ccc;
+    }
+    
+    .loginsignup-button {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: cadetblue;
+        font-weight: bold;
+    }
+    
+    .loginsignup-button:hover {
+        background-color: #ccc;
+    }
     body, html {
         height: 50%;
       }
@@ -131,6 +195,70 @@ body{
 
 @supports (display: flex) {
     @media screen and (min-width: 400px) {
+        
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 100px;
+            background-color: #ebebeb;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-container h2 {
+            text-align: center;
+        }
+        
+        .loginform-group {
+            margin-bottom: 30px;
+        }
+        
+        .loginlabel {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .logintext-input,
+        .loginpassword-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .loginsubmit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .loginsubmit-button:hover {
+            background-color: #ccc;
+        }
+        
+        .loginsignup-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: cadetblue;
+            font-weight: bold;
+        }
+        
+        .loginsignup-button:hover {
+            background-color: #ccc;
+        }
         body, html {
             height: 50%;
           }
@@ -357,6 +485,70 @@ body{
         
     }
     @media screen and (max-width: 768px) {
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 100px;
+            background-color: #ebebeb;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-container h2 {
+            text-align: center;
+        }
+        
+        .loginform-group {
+            margin-bottom: 30px;
+        }
+        
+        .loginlabel {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .logintext-input,
+        .loginpassword-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .loginsubmit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .loginsubmit-button:hover {
+            background-color: #ccc;
+        }
+        
+        .loginsignup-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: cadetblue;
+            font-weight: bold;
+        }
+        
+        .loginsignup-button:hover {
+            background-color: #ccc;
+        }
+        
         body, html {
             height: 50%;
           }
