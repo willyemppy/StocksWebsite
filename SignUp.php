@@ -65,7 +65,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </nav>
     </div>
 </div>
-    <h2 class="registration-form">Registration Form</h2>
+    
+<div class="login-container">
+        <h2>Sign Up</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- POST credentials to this file itself -->
+            <div class="loginform-group">
+                <label for="username" class="loginlabel">Username:</label>
+                <input type="text" id="username" name="username" class="logintext-input" required>
+                <span class="error" id="userNameError"></span>
+            </div>
+            <div class="loginform-group">
+                <label for="email" class="loginlabel">Email:</label>
+                <input type="email" id="email" name="email" class="logintext-input loginemail-input" required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="loginform-group">
+                <label for="password" class="loginlabel">Password (8-10 characters):</label>
+                <input type="password" id="password" name="password" class="loginpassword-input" minlength="8" maxlength="10" required>
+                <span class="error" id="passwordError"></span>
+            </div>
+            <button type="submit" onclick="validateForm()" class="loginsubmit-button">Sign Up</button>
+        
+        <a href="login.php" class="loginsignup-button">Already have an account? Log in</a>
+    </form>
+</div>
+
+
+<h2 class="registration-form">Registration Form</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- POST credentials to this file itself -->
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">

@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="login-container">
     <h2>Login</h2>
-    <a href="SignUp.php" target="_blank" class="loginsignup-button">Sign Up</a> <!--Open SignUp page on a new tab -->
+    
     
     <?php if (isset($error_message)) echo "<p>$error_message</p>"; ?> <!-- Echo Invalid username or password. or "Username and password are required."  -->
 
@@ -95,6 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="password" name="password" required class="loginpassword-input">
         </div>
         <input type="submit" value="Login" class="loginsubmit-button">
+        <a href="SignUp.php" target="_blank" class="loginsignup-button">Dont have an account? Register here</a> <!--Open SignUp page on a new tab -->
     </form>
 </div>
 
