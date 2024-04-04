@@ -6,12 +6,13 @@
 <meta name="description" content="About me page">
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <script>
-    const socket = new WebSocket('wss://ws.finnhub.io?token=cnkd071r01qiclq83k4gcnkd071r01qiclq83k50');
+    const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
     var lastStock = "";
     socket.addEventListener('message', function (event) {
         console.log('Message from server ', event.data);
             var stock = document.getElementById("stockdetails");
            // stock.innerText = JSON.stringify(JSON.parse(event.data)["data"]);
+           console.log(data);
            var list = (JSON.parse(event.data)["data"]);
            console.log(list);
            list.forEach(element=>{
@@ -29,16 +30,17 @@
         });
     function getCompanyDetails(){
         console.log("in getcompanydetails function");
-       
+       console.log("LastStock:", lastStock)
         if(lastStock != ""){
             socket.send(JSON.stringify({'type':'unsubscribe','symbol': lastStock}))
         }
 
         var company = document.getElementById("company").value;
-        console.log(company);
+        
         if(company == ""){
             return;
         }
+        console.log(company);
         lastStock = company;
         var stock = document.getElementById("stockdetails");
         stock.innerHTML = "";
@@ -71,7 +73,7 @@
             .then(data => {
                 var profileDiv = document.getElementById('companiesprofile');
                 profileDiv.innerHTML = "";
-                profileDiv.innerHTML += "<img src=\"" + data["logo"]+"\"><br>";
+                profileDiv.innerHTML += "<img src=\"" + data["logo"]+"\" width=\"400\" height=\"500\"><br>";
                 profileDiv.innerHTML += data["name"]+ "<br>";
                 profileDiv.innerHTML += "Contry: "  +data["country"]+ "(" + data["currency"] +")<br>";
                 profileDiv.innerHTML += "Field: "  +data["finnhubIndustry"] + " IPO: " + data["ipo"] +" <br>";
@@ -95,6 +97,7 @@
                 return response.json();
             })
             .then(data => {
+                document.getElementById("companyNews").innerHTML = "";
                 data.forEach(element => {
                 let div = document.createElement("div");
                     div.className = "newsblocks"
@@ -113,10 +116,27 @@
 </script>
 </head>
 <body>
-    <h1>Page Title</h1>
 <div>
+    <div id="iheader" >
+        <div id="headerBackground"></div> <!-- Container for the background images -->
+        
+          <!-- <div id="stockBackground">
+            <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
+          </div> -->
+          <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
+          
+          <div id="nav">
+            <nav class="menu">
+                <a class="menulink" href="index.html">Home</a>
+                <a class="menulink" href="aboutme.html">About</a>
+                <a class="menulink" href="registrationForm.html">New Users</a>
+                <a class="menulink" href="Login.php">Login</a>
+            </nav>
+          </div>
+            </div>
+    <div  class="search-container">
     <form onsubmit="event.preventDefault(); getCompanyDetails();">
-        <input placeholder="Search.." list="companies" id="company">
+        <input placeholder="Search.." list="companies" id="company" class="search-input" placeholder="Search...">
         <datalist id="companies"></datalist>
 
         <script>
@@ -142,9 +162,9 @@
             
 
         </script>
-        <input type="submit">
+        <input type="submit" class="search-button">
     </form>
-   
+</div>
     
 </div>
 <div id="companieInfo">
