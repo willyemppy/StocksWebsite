@@ -44,10 +44,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sign Up</title>
-
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
+<div id="iheader">
+    <div id="headerBackground"></div> <!-- Container for the background images -->
+
+    <div id="stockBackground">
+        <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
+    </div>
+    <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
+
+    <div id="nav">
+        <nav class="menu">
+            <a class="menulink" href="index.html">Home</a>
+            <a class="menulink" href="aboutme.html">About</a>
+            <a class="menulink" href="SignUp.php">New Users</a>
+            <a class="menulink" href="Login.php">Login</a>
+        </nav>
+    </div>
+</div>
     <h2 class="registration-form">Registration Form</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- POST credentials to this file itself -->
         <label for="username">Username:</label>
