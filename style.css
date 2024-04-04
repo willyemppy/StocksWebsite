@@ -189,7 +189,27 @@ body{
         background-color: cadetblue;
         color: white;
     }
+    #footer {
+        background-color: #ccc;
+        color: black;
+        clear: both;
+        text-align: center;
+        width: 100%;
+        font-size: large;
+        padding: 10px;
+    }
     
+    #footer a {
+        color: #0022ff;
+        background-color: transparent;
+        text-decoration: none;
+        padding: 0;
+    }
+    
+    #footer a:hover {
+        background-color: transparent;
+        color: darkblue;
+    }
 
 }
 
@@ -481,6 +501,27 @@ body{
             margin: 0 auto 20px; /* Centers the image and adds space below */
             border-radius: 50%; /* Optional: creates a circular image */
           }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
+        }
 
         
     }
@@ -676,6 +717,27 @@ body{
             background-color: cadetblue;
             color: white;
         }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
+        }
     }
     @media screen and (min-width: 1520px) {
         body, html {
@@ -848,6 +910,27 @@ body{
         /* Hover effect for the search button */
         .search-button:hover {
             background-color: #0056b3;
+        }
+        #footer {
+            background-color: #ccc;
+            color: black;
+            clear: both;
+            text-align: center;
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+        }
+        
+        #footer a {
+            color: #0022ff;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 0;
+        }
+        
+        #footer a:hover {
+            background-color: transparent;
+            color: darkblue;
         }
     }
 }

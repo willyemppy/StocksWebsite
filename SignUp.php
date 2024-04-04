@@ -105,5 +105,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return emailRegex.test(email);
         }
     </script>
+<div id="footer">     
+  <footer>
+      <br><p><strong><A href="aboutme.html">Contact Us</A></strong> <br><br>
+          Address: 1385 Woodroffe Ave, Ottawa, ON K2G 1V8<br>
+          Phone Number: 1-(888)-888-8888<br>
+          Email:<a href="mailto:EasyMoney@gmail.com?subject=From%20About%20Me%20Page"> EasyMoney@gmail.com</a><br>
+      </p>
+  </footer>  
+  </div>
 </body>
 </html>
