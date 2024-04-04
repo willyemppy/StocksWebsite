@@ -479,7 +479,7 @@ body{
 
         
     }
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
         body, html {
             height: 50%;
           }
@@ -574,6 +574,133 @@ body{
 
             height: 100%;
             /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #nav .menu {
+            text-align: center;
+            text-wrap: wrap;
+            justify-content: center;
+            display: flex;
+            padding: 10px;
+            gap: 20px;
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #nav .menulink {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: white;
+            transition: background-color 0.3s ease;
+            margin: 5px 0;
+        }
+        
+        #nav .menulink:hover {
+            background-color: cadetblue;
+            color: white;
+        }
+    }
+    /*@media screen and (max-width: 1024px) {
+        body, html {
+            height: 50%;
+          }
+          #topstocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #topstockcotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #worststocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #worststockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #activestocks{
+            text-align: center;
+            background-color: cadetblue;
+          }
+        #activestockscotainers{
+            overflow-x: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+            padding-top: 10px; 
+        }
+        #stocks{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            
+        }
+        #news{
+            overflow-x: auto;
+            text-align: center;
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-grow: 4;
+            padding-top: 10px; 
+        }
+        .stockblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            
+            
+        }
+
+        .newsblocks{
+            background-color: white;
+            text-align: center;
+            margin-left: 1em;
+            margin-right: 1em;
+            padding: 1em;
+            margin-bottom: 1em;
+            min-width: 28em;
+        }
+        #iheader {
+            background-color: darkgoldenrod;
+            text-align: center;
+            font-size: x-large;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            background-image:   url('Picture1.jpg');
+            
+            transition: opacity 2s ease-in-out; 
+            opacity: 1.2; 
+
+            height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -604,7 +731,7 @@ body{
             color: white;
         }
     }
-    @media screen and (min-width: 1024px) {
+    @media screen and (max-width: 800px) {
         body, html {
             height: 50%;
           }
@@ -694,11 +821,11 @@ body{
             justify-content: flex-end;
             background-image:   url('Picture1.jpg');
             
-            transition: opacity 2s ease-in-out; /*Fading*/
-            opacity: 1.2; /* Start fully visible */
+            transition: opacity 2s ease-in-out; 
+            opacity: 1.2; 
 
             height: 100%;
-            /* Center and scale the image nicely */
+            
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -729,7 +856,7 @@ body{
             color: white;
         }
     }
-    @media screen and (min-width: 800px) {
+    @media screen and (max-width: 1280px) {
         body, html {
             height: 50%;
           }
@@ -819,11 +946,10 @@ body{
             justify-content: flex-end;
             background-image:   url('Picture1.jpg');
             
-            transition: opacity 2s ease-in-out; /*Fading*/
-            opacity: 1.2; /* Start fully visible */
+            transition: opacity 2s ease-in-out;
+            opacity: 1.2; 
 
             height: 100%;
-            /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -854,7 +980,7 @@ body{
             color: white;
         }
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (max-width: 1520px) {
         body, html {
             height: 50%;
           }
@@ -944,11 +1070,10 @@ body{
             justify-content: flex-end;
             background-image:   url('Picture1.jpg');
             
-            transition: opacity 2s ease-in-out; /*Fading*/
-            opacity: 1.2; /* Start fully visible */
+            transition: opacity 2s ease-in-out; 
+            opacity: 1.2; 
 
             height: 100%;
-            /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -972,131 +1097,7 @@ body{
             border-radius: 5px;
             background-color: white;
             transition: background-color 0.3s ease;
-        }
-        
-        #nav .menulink:hover {
-            background-color: cadetblue;
-            color: white;
-        }
-    }
-    @media screen and (min-width: 1520px) {
-        body, html {
-            height: 50%;
-          }
-          #topstocks{
-            text-align: center;
-            background-color: cadetblue;
-          }
-        #topstockcotainers{
-            overflow-x: auto;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-           
-            padding-top: 10px; 
-        }
-        #worststocks{
-            text-align: center;
-            background-color: cadetblue;
-          }
-        #worststockscotainers{
-            overflow-x: auto;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-           
-            padding-top: 10px; 
-        }
-        #activestocks{
-            text-align: center;
-            background-color: cadetblue;
-          }
-        #activestockscotainers{
-            overflow-x: auto;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-           
-            padding-top: 10px; 
-        }
-        #stocks{
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            
-        }
-        #news{
-            overflow-x: auto;
-            text-align: center;
-            background-color: beige;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            flex-grow: 4;
-            padding-top: 10px; 
-        }
-        .stockblocks{
-            background-color: white;
-            text-align: center;
-            margin-left: 1em;
-            margin-right: 1em;
-            padding: 1em;
-            margin-bottom: 1em;
-            
-            
-        }
-
-        .newsblocks{
-            background-color: white;
-            text-align: center;
-            margin-left: 1em;
-            margin-right: 1em;
-            padding: 1em;
-            margin-bottom: 1em;
-            min-width: 28em;
-        }
-        #iheader {
-            background-color: darkgoldenrod;
-            text-align: center;
-            font-size: x-large;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
-            background-image:   url('Picture1.jpg');
-            
-            transition: opacity 2s ease-in-out; /*Fading*/
-            opacity: 1.2; /* Start fully visible */
-
-            height: 100%;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #nav .menu {
-            text-align: center;
-            text-wrap: wrap;
-            justify-content: center;
-            display: flex;
-            padding: 10px;
-            gap: 20px;
-            background-color: transparent;
-        }
-        
-        #nav .menulink {
-            color: black;
-            text-decoration: none;
-            text-align: center;
-            padding: 10px 30px;
-            border-radius: 5px;
-            background-color: white;
-            transition: background-color 0.3s ease;
+            margin: 5px 0;
         }
         
         #nav .menulink:hover {
@@ -1107,7 +1108,7 @@ body{
 
         
     
-    }
+    }*/
 }
 /* #oldBookBackground{
     background-color: black;
