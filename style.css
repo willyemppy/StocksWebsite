@@ -476,7 +476,7 @@ body{
 
         .apartElements .teamIcon {
             width: 200px; /* Example width, adjust as needed */
-            height: 200px; /* Example height, adjust as needed */
+            height: 210px; /* Example height, adjust as needed */
             display: block; /* Makes the image a block-level element */
             margin: 0 auto 20px; /* Centers the image and adds space below */
             border-radius: 50%; /* Optional: creates a circular image */
