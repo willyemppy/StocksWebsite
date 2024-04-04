@@ -1,6 +1,5 @@
 body{
     background-color: white;
-    
 }
 @supports not (display: flex) {
     
@@ -77,12 +76,11 @@ body{
         background-color: cadetblue;
       }
     #topstockcotainers{
-        overflow-x: auto;
+        overflow-x: hidden;
         text-align: center;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-       
         padding-top: 10px; 
     }
     #worststocks{
@@ -292,7 +290,7 @@ body{
             overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -605,7 +603,7 @@ body{
             overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -756,12 +754,12 @@ body{
             overflow: hidden;
           }
         #topstockcotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-           
+        
             padding-top: 10px; 
         }
         #worststocks{
