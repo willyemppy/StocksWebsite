@@ -90,7 +90,7 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
         console.log(element);
     });
     
-    
+
     data["top_losers"].forEach(element => {
       let div = document.createElement("div");
         div.className = "stockblocks"
@@ -212,9 +212,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="stock-section" id="topstocks">
     <h1>Top preformas</h1>
     <div class="stock-container" id="topstockcotainers"></div>
-    <button class="prev" aria-label="Scroll to previous stocks">&#10094;
+    <button class="prev">&#10094;
     </button> <!-- Left arrow for previous 6 stocks -->
-    <button class="next" aria-label="Scroll to next stocks">&#10095;
+    <button class="next" >&#10095;
     </button> <!-- Right arrow for next 6 stocks -->
     </div>
 

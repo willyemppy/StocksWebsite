@@ -285,6 +285,7 @@ body{
             height: 50%;
           }
           #topstocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
             overflow: hidden;
@@ -299,6 +300,7 @@ body{
             padding-top: 10px; 
         }
         #worststocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -312,6 +314,7 @@ body{
             padding-top: 10px; 
         }
         #activestocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -359,6 +362,7 @@ body{
             padding: 1em;
             margin-bottom: 1em;
             min-width: 28em;
+            font-size:small;
         }
         #iheader {
             background-color: darkgoldenrod;
@@ -536,13 +540,13 @@ body{
         .prev, .next {
             
             cursor: pointer;
-            /* position: absolute; */
+            position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background-color: #adbbc9; 
             color: white;
             border: none;
-            padding: 50px 5px;
+            padding: 130px 5px;
             box-shadow: 0 2px 5px rgba(207, 194, 194, 0.2); /* Subtle shadow */
             font-size: 16px; 
             transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
@@ -624,6 +628,7 @@ body{
             height: 50%;
           }
           #topstocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
             overflow: hidden;
@@ -638,6 +643,7 @@ body{
             padding-top: 10px; 
         }
         #worststocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -651,6 +657,7 @@ body{
             padding-top: 10px; 
         }
         #activestocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -802,6 +809,7 @@ body{
             height: 50%;
           }
           #topstocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
             overflow: hidden;
@@ -816,6 +824,7 @@ body{
             padding-top: 5px; 
         }
         #worststocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -829,6 +838,7 @@ body{
             padding-top: 10px; 
         }
         #activestocks{
+            position:relative;
             text-align: center;
             background-color: cadetblue;
           }
@@ -1025,33 +1035,10 @@ body{
             background-color: transparent;
             color: darkblue;
         }
+
     }
 
-    .prev {
-        left: 0; 
-      }
-      
-      .next {
-        right: 0; 
-      }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #adbbc9; 
-        color: white;
-        border: none;
-        padding: 130px 5px;
-        box-shadow: 0 2px 5px rgba(207, 194, 194, 0.2); /* Subtle shadow */
-        font-size: 16px; 
-        transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
-      }
-      
-      .prev:hover, .next:hover {
-        background-color: #405974; /* Darker shade when hovered */
-        transform: translateY(-50%) scale(1.08); /* Slightly larger on hover */
-      }
+   
    
 }
 /* #oldBookBackground{
