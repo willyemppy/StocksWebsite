@@ -759,8 +759,8 @@ body{
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-        
-            padding-top: 10px; 
+            justify-content: space-between;
+            padding-top: 5px; 
         }
         #worststocks{
             text-align: center;
@@ -805,13 +805,12 @@ body{
             padding-top: 10px; 
         }
         .stockblocks{
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             text-align: center;
-            margin-left: 1em;
+            margin-left: 3em;
             margin-right: 1em;
             padding: 1em;
-            margin-bottom: 1em;
-            
+            margin-bottom: 2em;
             
         }
 
@@ -940,6 +939,31 @@ body{
         }
     }
 
+    .prev {
+        left: 0; 
+      }
+      
+      .next {
+        right: 0; 
+      }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #adbbc9; 
+        color: white;
+        border: none;
+        padding: 130px 5px;
+        box-shadow: 0 2px 5px rgba(207, 194, 194, 0.2); /* Subtle shadow */
+        font-size: 16px; 
+        transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+      }
+      
+      .prev:hover, .next:hover {
+        background-color: #405974; /* Darker shade when hovered */
+        transform: translateY(-50%) scale(1.08); /* Slightly larger on hover */
+      }
    
 }
 /* #oldBookBackground{
