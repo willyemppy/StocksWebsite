@@ -7,20 +7,26 @@
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <script>
     const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
+    // Connection opened -> Subscribe
+socket.addEventListener('open', function (event) {
+    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
+    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+});
     var lastStock = "";
     socket.addEventListener('message', function (event) {
         console.log('Message from server ', event.data);
             var stock = document.getElementById("stockdetails");
            // stock.innerText = JSON.stringify(JSON.parse(event.data)["data"]);
-           console.log(data);
+           console.log(event.data);
            var list = (JSON.parse(event.data)["data"]);
            console.log(list);
            list.forEach(element=>{
+            console.log(element);
             let stockid = element["s"];
             let stockprice = element["p"];
             stock.innerHTML = "";
-            stock.innerHTML += "<h2>" + stockid +"</h2>"
-            stock.innerHTML += "<h2>$" + stockprice + "</h2>"
+            stock.innerHTML +=  stockid + ": "+ stockprice 
            
            });
            
@@ -71,14 +77,40 @@
                 return response.json();
             })
             .then(data => {
+                var imageDiv = document.getElementById('companyPhoto');
                 var profileDiv = document.getElementById('companiesprofile');
+                var otherStockDetails = document.getElementById('companyStockdetails');
+                var stock = document.getElementById("stockdetails");
+                imageDiv.innerHTML = "";
+                otherStockDetails.innerHTML = "";
                 profileDiv.innerHTML = "";
-                profileDiv.innerHTML += "<img src=\"" + data["logo"]+"\" width=\"400\" height=\"500\"><br>";
-                profileDiv.innerHTML += data["name"]+ "<br>";
-                profileDiv.innerHTML += "Contry: "  +data["country"]+ "(" + data["currency"] +")<br>";
-                profileDiv.innerHTML += "Field: "  +data["finnhubIndustry"] + " IPO: " + data["ipo"] +" <br>";
-                profileDiv.innerHTML += "Market Capitalization: "  +data["marketCapitalization"] + "<br>";
-                profileDiv.innerHTML += "Share Outstanding: "  +data["shareOutstanding"] + "<br>";
+                imageDiv.innerHTML += "<img src=\"" + data["logo"]+"\" width=\"400\" height=\"500\"><br>";
+                
+                var span = document.createElement("div");
+                span.innerHTML = data["name"]+ "<br>";
+                profileDiv.appendChild(span);
+                span = document.createElement("span");
+                span.innerHTML += "Contry: "  +data["country"]+ "(" + data["currency"] +")<br>";
+                profileDiv.appendChild(span);
+                span = document.createElement("span");
+                span.innerHTML += "Field: "  +data["finnhubIndustry"] +" <br>";
+                profileDiv.appendChild(span);
+                span = document.createElement("span");
+                span.innerHTML += " IPO: " + data["ipo"] +" <br>";
+                profileDiv.appendChild(span);
+                span = document.createElement("span");
+                span.innerHTML += " URL: <a href=\"" + data["weburl"] +"\">Company's Website</a>  <br>";
+                profileDiv.appendChild(span);
+
+                profileDiv.appendChild(stock)
+                span = document.createElement("span");
+                span.innerHTML += "Market Capitalization: "  +data["marketCapitalization"] + "<br>";
+                profileDiv.appendChild(span);
+                span = document.createElement("span");
+                span.innerHTML += "Share Outstanding: "  +data["shareOutstanding"] + "<br>";
+                profileDiv.appendChild(span);
+
+                otherStockDetails.innerHTML = '<iframe width="100%" frameborder="0" height="400" src="https://widget.finnhub.io/widgets/recommendation?symbol=' + company + '"></iframe>'
                 
 
             })
@@ -103,7 +135,7 @@
                     div.className = "newsblocks"
                     div.innerHTML += "<h2>" + element["headline"] +"</h2>"
                     if( element["image"] != ""){
-                    div.innerHTML += "<img src='" + element["image"] + "' style=\"max-width: 400px;\">";
+                    div.innerHTML += "<img src='" + element["image"] + "' width=\"200\" height=\"200\">";
                     }
                     div.innerHTML += "<br>" + element["summary"] +"<br>"
                     document.getElementById("companyNews").appendChild(div);
@@ -168,14 +200,19 @@
     
 </div>
 <div id="companieInfo">
-<div id="stockdetails">
+    <div id="companyPhoto"></div>
+<div >
    
 </div>
 
 <div id="companiesprofile">
+<div id="stockdetails"></div>
+</div>
+<div id="companyStockdetails">
+    
+</div>
+</div>
 
-</div>
-</div>
 <div id="companyNews"></div>
 <div id="footer">     
     <footer>

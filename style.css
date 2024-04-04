@@ -869,14 +869,49 @@ body{
             color: white;
         }
 
-
-        #companieInfo{
+        #companyNews{
+            overflow-x: auto;
+            text-align: center;
+            background-color: beige;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            justify-content:space-between;
+            flex-grow: 4;
+            padding-top: 10px; 
         }
-        
+
+        #companieInfo{
+            padding: 10;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+        }
+        #companiesprofile{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content:space-evenly ;
+            font-size: xx-large;
+        }
+        #companyStockdetails{
+            flex-grow: 2;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content:space-evenly ;
+            font-size: xx-large;
+        }
+        #otherStockDetails{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content:space-evenly ;
+            font-size: xx-large;
+        }
         .search-container {
             position: relative;
             margin: 20px auto;
