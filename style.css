@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    
 }
 @supports not (display: flex) {
     
@@ -70,6 +71,8 @@ body{
         height: 50%;
       }
       #topstocks{
+        position: relative;
+        width: 100%;
         text-align: center;
         background-color: cadetblue;
       }
@@ -191,6 +194,7 @@ body{
     }
     
 
+
 }
 
 @supports (display: flex) {
@@ -265,6 +269,7 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
             overflow-x: auto;
@@ -482,6 +487,7 @@ body{
             border-radius: 50%; /* Optional: creates a circular image */
           }
 
+       
         
     }
     @media screen and (max-width: 768px) {
@@ -555,6 +561,7 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
             overflow-x: auto;
@@ -684,6 +691,7 @@ body{
           #topstocks{
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #topstockcotainers{
             overflow-x: auto;
@@ -850,6 +858,8 @@ body{
             background-color: #0056b3;
         }
     }
+
+   
 }
 /* #oldBookBackground{
     background-color: black;

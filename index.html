@@ -146,6 +146,28 @@ window.onload = function() { //Boris
         }, 1500); // This matches the CSS transition time
     }, 10000); // Adjust overall interval as needed
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('topstockcotainers');
+  const nextBtn = document.querySelector('#topstocks .next');
+  const prevBtn = document.querySelector('#topstocks .prev');
+  let scrollWidth = container.clientWidth; // The visible width of the container
+
+  nextBtn.addEventListener('click', () => {
+    container.scrollBy({ left: scrollWidth, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    container.scrollBy({ left: -scrollWidth, behavior: 'smooth' });
+  });
+
+  // Optional: Adjust scrollWidth on window resize for responsiveness
+  window.addEventListener('resize', () => {
+    scrollWidth = container.clientWidth;
+  });
+});
+
+
 </script>
 
 <title>Example</title>
@@ -172,19 +194,25 @@ window.onload = function() { //Boris
       </div>
 
 <div id="stoks">
-<div id="topstocks">
- <h1>Top preformas</h1>
- <div id="topstockcotainers"></div>
+  
+  
+    <div class="stock-section" id="topstocks">
+    <h1>Top preformas</h1>
+    <div class="stock-container" id="topstockcotainers"></div>
+    <button class="prev">&#10094;</button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next">&#10095;</button> <!-- Right arrow for next 6 stocks -->
+    </div>
+    
+    <div class="stock-section" id="worststocks">
+      <h1>Worst preformas</h1>
+      <div class="stock-container" id="worststockscotainers"></div>
+    </div>
+    <div class="stock-section" id="activestocks">
+      <h1>Most active</h1>
+      <div class="stock-container" id="activestockscotainers"></div>
+    </div>
 </div>
-<div id="worststocks">
-  <h1>Worst preformas</h1>
-  <div id="worststockscotainers"></div>
- </div>
- <div id="activestocks">
-  <h1>Most active</h1>
-  <div id="activestockscotainers"></div>
- </div>
-</div>
+
 <div id="news" >
  
 </div>
