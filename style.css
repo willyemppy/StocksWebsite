@@ -296,7 +296,6 @@ body{
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-           
             padding-top: 10px; 
         }
         #worststocks{
@@ -305,7 +304,7 @@ body{
             background-color: cadetblue;
           }
         #worststockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -319,7 +318,7 @@ body{
             background-color: cadetblue;
           }
         #activestockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -348,10 +347,10 @@ body{
             text-align: center;
             margin-left: 1em;
             margin-right: 1em;
-            padding: 1em;
+            padding: 1%;
             margin-bottom: 1em;
-            
-            
+            position: relative;
+            font-size: small;
         }
 
         .newsblocks{
@@ -545,7 +544,7 @@ body{
             background-color: #adbbc9; 
             color: white;
             border: none;
-            padding: 130px 5px;
+            padding: 100px 5px;
             box-shadow: 0 2px 5px rgba(207, 194, 194, 0.2); /* Subtle shadow */
             font-size: 16px; 
             transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
@@ -645,9 +644,10 @@ body{
             position:relative;
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #worststockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -826,14 +826,15 @@ body{
             position:relative;
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #worststockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-           
+            justify-content: space-between;
             padding-top: 10px; 
         }
         #activestocks{
@@ -1035,9 +1036,34 @@ body{
             color: darkblue;
         }
 
+        .prev {
+            left: 0; 
+          }
+          
+          .next {
+            right: 0; 
+          }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #adbbc9; 
+            color: white;
+            border: none;
+            padding: 100px 5px;
+            box-shadow: 0 2px 5px rgba(207, 194, 194, 0.2); /* Subtle shadow */
+            font-size: 16px; 
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+          }
+          
+          .prev:hover, .next:hover {
+            background-color: #405974; /* Darker shade when hovered */
+            transform: translateY(-50%) scale(1.08); /* Slightly larger on hover */
+
     }
 
-   
+}
    
 }
 /* #oldBookBackground{
