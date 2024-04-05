@@ -1,5 +1,5 @@
 <?php 
-//Emperor Anuku
+//PHP written by Emperor Anuku
 session_start(); 
 if (!isset($_SESSION["userID"])) {
     header("Location: login.php");
@@ -177,7 +177,7 @@ socket.addEventListener('open', function (event) {
                 <!-- Link to admin panel -->
                 <?php if ($is_admin) { ?>
                         <a class="menulink" href="admin.php">Admin Panel</a>
-                    <?php } ?>
+                    <?php } //Emperor Anuku?>
             </nav>
             <div>
                 <form action="logout.php" method="post">

@@ -1,5 +1,6 @@
 <?php
 session_start();
+//Written by Emperor Anuku
 
 // Check if user is logged in and is admin
 if (!(isset($_SESSION["username"]) && $_SESSION["username"] == "admin")) {
