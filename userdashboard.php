@@ -17,9 +17,9 @@ if (!isset($_SESSION["userID"])) {
     const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
     // Connection opened -> Subscribe
 socket.addEventListener('open', function (event) {
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
 });
     var lastStock = "";
     socket.addEventListener('message', function (event) {
