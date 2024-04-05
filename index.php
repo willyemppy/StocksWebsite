@@ -154,34 +154,41 @@ window.onload = function() { //Boris
     }, 10000); // Adjust overall interval as needed
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('topstockcotainers');
-  const nextBtn = document.querySelector('#topstocks .next');
-  const prevBtn = document.querySelector('#topstocks .prev');
+document.addEventListener('DOMContentLoaded', function() { //boris
+  // const container = document.getElementById('topstockcotainers'); 
+  // const nextBtn = document.querySelector('#topstocks .next');
+  // const prevBtn = document.querySelector('#topstocks .prev');
 
-  function smoothScrollBy(distance, duration) { //distance is the num of pixels to scroll 
-    let initialPosition = container.scrollLeft; //and duration is the time in ms over which the scroll should occur
-    let startTime = null;
+  document.querySelectorAll('.stock-container').forEach(container => {
+    const nextBtn = container.parentElement.querySelector('.next'); 
+    const prevBtn = container.parentElement.querySelector('.prev');
 
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      let timeElapsed = currentTime - startTime;
-      let progress = Math.min(timeElapsed / duration, 1); //it will calculate the current scroll position
+    function smoothScrollBy(distance, duration) {
+      let initialPosition = container.scrollLeft;
+      let startTime = null;
 
-      container.scrollLeft = initialPosition + (distance * progress);
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
 
-      if (timeElapsed < duration) window.requestAnimationFrame(animation);
+        container.scrollLeft = initialPosition + (distance * progress);
+
+        if (timeElapsed < duration) {
+          window.requestAnimationFrame(animation);
+        }
+      }
+
+      window.requestAnimationFrame(animation);
     }
 
-    window.requestAnimationFrame(animation); //for smooth animations
-  }
+    nextBtn.addEventListener('click', () => {
+      smoothScrollBy(container.clientWidth, 700); // Scroll right smoothly over 700ms
+    });
 
-  nextBtn.addEventListener('click', () => {
-    smoothScrollBy(container.clientWidth, 700); // Scroll right smoothly over 700ms
-  });
-
-  prevBtn.addEventListener('click', () => {
-    smoothScrollBy(-container.clientWidth, 700); // Scroll left smoothly over 700ms
+    prevBtn.addEventListener('click', () => {
+      smoothScrollBy(-container.clientWidth, 700); // Scroll left smoothly over 700ms
+    });
   });
 });
 
@@ -227,15 +234,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="stock-section" id="worststocks">
       <h1>Worst preformas</h1>
       <div class="stock-container" id="worststockscotainers"></div>
+      <button class="prev">&#10094;
+    </button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next" >&#10095;
+    </button> <!-- Right arrow for next 6 stocks -->
     </div>
+
     <div class="stock-section" id="activestocks">
       <h1>Most active</h1>
       <div class="stock-container" id="activestockscotainers"></div>
+      <button class="prev">&#10094;
+    </button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next" >&#10095;
+    </button> <!-- Right arrow for next 6 stocks -->
     </div>
 </div>
 
-<div id="news" >
- 
+<div  id="news" >
 </div>
 
 <div id="footer">     
