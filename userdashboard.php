@@ -171,8 +171,13 @@ socket.addEventListener('open', function (event) {
                 <a class="menulink" href="aboutme.php">About</a>
                 <a class="menulink" href="registrationForm.php">New Users</a>
                 <a class="menulink" href="login.php">Login</a>
-                <a class="menulink" href="logout.php">Login</a>
             </nav>
+            <div>
+                <form action="logout.php" method="post">
+                    <button type="submit" name="logout" class="loginsignup-button">Logout</button>
+                </form>
+            </div>
+          
           </div>
             </div>
     <div  class="search-container">
