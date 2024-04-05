@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var_dump($row);
 
             // Redirect the user to the dashboard or home page
-            header("Location: dashboard.php");
+            header("Location: userdashboard.php");
             exit();
         } else {
             // Invalid credentials, display error message
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="menulink" href="index.php">Home</a>
             <a class="menulink" href="aboutme.php">About</a>
             <a class="menulink" href="SignUp.php">New Users</a>
-            <a class="menulink" href="Login.php">Login</a>
+            <a class="menulink" href="login.php">Login</a>
         </nav>
     </div>
 </div>
