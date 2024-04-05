@@ -741,9 +741,10 @@ body{
             position:relative;
             text-align: center;
             background-color: cadetblue;
+            overflow: hidden;
           }
         #activestockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -975,7 +976,7 @@ body{
             position:relative;
             text-align: center;
             background-color: cadetblue;
-            overflow: hidden;
+            
           }
         #topstockcotainers{
             overflow-x: hidden;
@@ -983,14 +984,13 @@ body{
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: space-between;
-            padding-top: 5px; 
+            padding-top: 10px; 
         }
         #worststocks{
             position:relative;
             text-align: center;
             background-color: cadetblue;
-            overflow: hidden;
+            
           }
         #worststockscotainers{
             overflow-x: hidden;
@@ -1005,9 +1005,10 @@ body{
             position:relative;
             text-align: center;
             background-color: cadetblue;
+            
           }
         #activestockscotainers{
-            overflow-x: auto;
+            overflow-x: hidden;
             text-align: center;
             display: flex;
             flex-direction: row;
