@@ -3,7 +3,7 @@
 // Database configuration
 $servername = "127.0.0.1";
 $username = "root"; // MySQL username
-$password = ""; // MySQL password
+$password = "Password"; // MySQL password
 $database = "Stocks_Website"; // database name
 
 // Create connection
