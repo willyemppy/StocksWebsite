@@ -1,9 +1,12 @@
 <?php 
+//Emperor Anuku
 session_start(); 
 if (!isset($_SESSION["userID"])) {
     header("Location: login.php");
     exit();
 }
+$admin_usernames = array("admin"); // admin usernames is added
+$is_admin = in_array($_SESSION["username"], $admin_usernames);
  ?>
 
 <!DOCTYPE html>
@@ -171,6 +174,10 @@ socket.addEventListener('open', function (event) {
                 <a class="menulink" href="aboutme.php">About</a>
                 <a class="menulink" href="registrationForm.php">New Users</a>
                 <a class="menulink" href="login.php">Login</a>
+                <!-- Link to admin panel -->
+                <?php if ($is_admin) { ?>
+                        <a class="menulink" href="admin.php">Admin Panel</a>
+                    <?php } ?>
             </nav>
             <div>
                 <form action="logout.php" method="post">

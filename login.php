@@ -40,6 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect the user to the dashboard or home page
             header("Location: userdashboard.php");
             exit();
+            if ($username == "admin") {
+                $_SESSION["admin"] = true;
+            }
         } else {
             // Invalid credentials, display error message
             $error_message = "Invalid username or password.";
