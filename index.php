@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() { //boris
   
   
     <div class="stock-section" id="topstocks">
-    <h1>Top preformas</h1>
+    <h1>Top performas</h1>
     <div class="stock-container" id="topstockcotainers"></div>
     <button class="prev">&#10094;
     </button> <!-- Left arrow for previous 6 stocks -->
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() { //boris
     </div>
 
     <div class="stock-section" id="worststocks">
-      <h1>Worst preformas</h1>
+      <h1>Worst performas</h1>
       <div class="stock-container" id="worststockscotainers"></div>
       <button class="prev">&#10094;
     </button> <!-- Left arrow for previous 6 stocks -->
