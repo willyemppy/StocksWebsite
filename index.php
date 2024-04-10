@@ -1,5 +1,5 @@
 <?php 
-//Emperor Anuku
+//Emperor Anuku - Wrote PHP code on this page
 session_start(); 
 
  ?>

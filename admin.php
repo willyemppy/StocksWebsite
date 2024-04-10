@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Written by Emperor Anuku
+//Emperor Anuku -  Wrote "Admin.php", PHP code to add and delete users, HTML code to represent database information
 
 // Check if user is logged in and is admin
 if (!(isset($_SESSION["username"]) && $_SESSION["username"] == "admin")) {

@@ -1,7 +1,8 @@
 
 <?php
 
-//Written by Emperor Anuku
+//Emperor Anuku - Wrote PHP code to get input from HTML forms, validate input, and compare with database information
+//Emperor Anuku - Wrote the Javascript code to perform input validation on the form entries, using functions and regex
 
 /*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header. Used Emperor's php and 
 validation (for password, email, username verification).*/
@@ -88,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="login-container">
     <h2>Login</h2>
     
-    
+    <!-- PHP written by Emperor Anuku -->
     <?php if (isset($error_message)) echo "<p>$error_message</p>"; ?> <!-- Echo Invalid username or password. or "Username and password are required."  -->
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="loginform">

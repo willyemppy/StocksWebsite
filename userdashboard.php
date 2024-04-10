@@ -1,5 +1,7 @@
 <?php 
-//PHP written by Emperor Anuku
+//Emperor Anuku: PHP is written by Emperor Anuku, using session variables to capture which user is logged in. 
+//If Admin, display the admin panel button
+
 session_start(); 
 if (!isset($_SESSION["userID"])) {
     header("Location: login.php");
@@ -174,7 +176,7 @@ socket.addEventListener('open', function (event) {
                 <a class="menulink" href="aboutme.php">About</a>
                 <a class="menulink" href="registrationForm.php">New Users</a>
                 <a class="menulink" href="login.php">Login</a>
-                <!-- Link to admin panel -->
+                <!-- Emperor Anuku: Link to admin panel -->
                 <?php if ($is_admin) { ?>
                         <a class="menulink" href="admin.php">Admin Panel</a>
                     <?php } //Emperor Anuku?>

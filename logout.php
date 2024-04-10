@@ -1,5 +1,5 @@
 <?php
-//Written by Emperor Anuku
+//Emperor Anuku - Wrote logout.php to handle user logout
 
 session_start();
 

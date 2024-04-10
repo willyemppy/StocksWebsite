@@ -1,5 +1,5 @@
 <?php
-//Emperor Anuku
+//Emperor Anuku - Created the database connection file
 // Database configuration
 $servername = "127.0.0.1";
 $username = "root"; // MySQL username

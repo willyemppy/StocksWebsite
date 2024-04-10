@@ -1,8 +1,11 @@
 <?php
 session_start();
-//Written by Emperor Anuku
+//Emperor Anuku - Wrote PHP code to get input from HTML forms, validate input, and send to with database 
+//Emperor Anuku - Wrote the Javascript code to perform input validation on the form entries, using functions and regex
+
 /*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header. Used Emperor's php and 
 validation (for password, email, username verification).*/
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Form is submitted, process the data
     $username = trim($_POST["username"]);
@@ -70,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <div class="login-container">
         <h2>Sign Up</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- POST credentials to this file itself -->
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- PHP written by Emperor Anuku -->
             <div class="loginform-group">
                 <label for="username" class="loginlabel">Username:</label>
                 <input type="text" id="username" name="username" class="logintext-input" required>
@@ -94,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <h2 class="registration-form">Registration Form</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- POST credentials to this file itself -->
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <!-- PHP Written by Emperor Anuku -->
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
         <span class="error" id="userNameError"></span>
@@ -114,12 +117,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <script>
+        //Javascript written by Emperor Anuku
         function validateForm() {
             //const realName = document.getElementById('username').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
-            // Perform the inline validation logic here
 
             if (username.trim() === '') {
                 document.getElementById('userNameError').innerText = 'Please enter your username';

@@ -1,4 +1,4 @@
---Emperor Anuku
+--Emperor Anuku - Wrote SQL script to create database and database table
 CREATE DATABASE IF NOT EXISTS Stocks_Website;
 
 USE Stocks_Website;
