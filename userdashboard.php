@@ -9,7 +9,8 @@ $admin_usernames = array("admin"); // admin usernames is added
 $is_admin = in_array($_SESSION["username"], $admin_usernames);
  ?>
 <!-- Work cotribution:
-Raj Nasit: I worked on the script part and displaying the API value in page and did a bit css for this page -->
+Raj Nasit: I worked on the script part and displaying the API value in page and did a bit css for this page
+David Fallows: Worked on the header, footer, nav elements of the page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

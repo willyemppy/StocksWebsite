@@ -3,7 +3,8 @@
 
 //Written by Emperor Anuku
 
-
+/*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header. Used Emperor's php and 
+validation (for password, email, username verification).*/
 
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

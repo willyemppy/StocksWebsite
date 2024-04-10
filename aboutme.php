@@ -1,6 +1,6 @@
 <?php 
 //Emperor Anuku
-//Boris and David
+//Boris and David - Worked on the front end, and visual aspects of page
 session_start(); 
 if (!isset($_SESSION["userID"])) {
   header("Location: login.php");
