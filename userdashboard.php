@@ -1,9 +1,12 @@
 <?php 
+//PHP written by Emperor Anuku
 session_start(); 
 if (!isset($_SESSION["userID"])) {
     header("Location: login.php");
     exit();
 }
+$admin_usernames = array("admin"); // admin usernames is added
+$is_admin = in_array($_SESSION["username"], $admin_usernames);
  ?>
 <!-- Work cotribution:
 Raj Nasit: I worked on the script part and displaying the API value in page and did a bit css for this page -->
@@ -16,9 +19,9 @@ Raj Nasit: I worked on the script part and displaying the API value in page and 
     const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
     // Connection opened -> Subscribe
 socket.addEventListener('open', function (event) {
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
-    socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
+    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
 });
     var lastStock = "";
     socket.addEventListener('message', function (event) {
@@ -170,6 +173,10 @@ socket.addEventListener('open', function (event) {
                 <a class="menulink" href="aboutme.php">About</a>
                 <a class="menulink" href="registrationForm.php">New Users</a>
                 <a class="menulink" href="login.php">Login</a>
+                <!-- Link to admin panel -->
+                <?php if ($is_admin) { ?>
+                        <a class="menulink" href="admin.php">Admin Panel</a>
+                    <?php } //Emperor Anuku?>
             </nav>
             <div>
                 <form action="logout.php" method="post">
@@ -229,7 +236,7 @@ socket.addEventListener('open', function (event) {
 <div id="companyNews"></div>
 <div id="footer">     
     <footer>
-        <br><p><strong><A href="aboutme.html">Contact Us</A></strong> <br><br>
+        <br><p><strong><A href="aboutme.php">Contact Us</A></strong> <br><br>
             Address: 1385 Woodroffe Ave, Ottawa, ON K2G 1V8<br>
             Phone Number: 1-(888)-888-8888<br>
             Email:<a href="mailto:EasyMoney@gmail.com?subject=From%20About%20Me%20Page"> EasyMoney@gmail.com</a><br>
