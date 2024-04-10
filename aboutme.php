@@ -1,5 +1,6 @@
 <?php 
 //Emperor Anuku
+//Boris and David
 session_start(); 
 if (!isset($_SESSION["userID"])) {
   header("Location: login.php");
@@ -10,7 +11,7 @@ if (!isset($_SESSION["userID"])) {
 <html>
 <head lang="en">
 <script>
-  window.onload = function() { //Boris
+  window.onload = function() { 
     var images = [
         'url("Picture1.jpg")',
         'url("Picture2.jpg")',
