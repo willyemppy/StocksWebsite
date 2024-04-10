@@ -1,5 +1,9 @@
 <?php 
 session_start(); 
+if (!isset($_SESSION["userID"])) {
+    header("Location: login.php");
+    exit();
+}
  ?>
 
 <!DOCTYPE html>
@@ -13,9 +17,7 @@ session_start();
     const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
     // Connection opened -> Subscribe
 socket.addEventListener('open', function (event) {
-    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
-    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
-    // socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+
 });
     var lastStock = "";
     socket.addEventListener('message', function (event) {
@@ -160,14 +162,20 @@ socket.addEventListener('open', function (event) {
             <img src="Picture1.jpg" style="width:100%; " id="backgroundImage"/>
           </div> -->
           <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
-          
+          <h1>Welcome to Your Dashboard, <?php echo $_SESSION["username"]; //Emperor Anuku?>!</h1>
           <div id="nav">
             <nav class="menu">
-                <a class="menulink" href="index.html">Home</a>
-                <a class="menulink" href="aboutme.html">About</a>
-                <a class="menulink" href="registrationForm.html">New Users</a>
-                <a class="menulink" href="Login.php">Login</a>
+                <a class="menulink" href="index.php">Home</a>
+                <a class="menulink" href="aboutme.php">About</a>
+                <a class="menulink" href="registrationForm.php">New Users</a>
+                <a class="menulink" href="login.php">Login</a>
             </nav>
+            <div>
+                <form action="logout.php" method="post">
+                    <button type="submit" name="logout" class="loginsignup-button">Logout</button>
+                </form>
+            </div>
+          
           </div>
             </div>
     <div  class="search-container">

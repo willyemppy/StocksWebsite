@@ -38,8 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var_dump($row);
 
             // Redirect the user to the dashboard or home page
-            header("Location: dashboard.php");
+            header("Location: userdashboard.php");
             exit();
+            if ($username == "admin") {
+                $_SESSION["admin"] = true;
+            }
         } else {
             // Invalid credentials, display error message
             $error_message = "Invalid username or password.";
@@ -74,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="menulink" href="index.php">Home</a>
             <a class="menulink" href="aboutme.php">About</a>
             <a class="menulink" href="SignUp.php">New Users</a>
-            <a class="menulink" href="Login.php">Login</a>
+            <a class="menulink" href="login.php">Login</a>
         </nav>
     </div>
 </div>
@@ -101,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div id="footer">     
   <footer>
-      <br><p><strong><A href="aboutme.html">Contact Us</A></strong> <br><br>
+      <br><p><strong><A href="aboutme.php">Contact Us</A></strong> <br><br>
           Address: 1385 Woodroffe Ave, Ottawa, ON K2G 1V8<br>
           Phone Number: 1-(888)-888-8888<br>
           Email:<a href="mailto:EasyMoney@gmail.com?subject=From%20About%20Me%20Page"> EasyMoney@gmail.com</a><br>

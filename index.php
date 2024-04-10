@@ -1,6 +1,11 @@
 <?php 
+//Emperor Anuku
 session_start(); 
+
  ?>
+
+ <!-- Work cotribution:
+Raj Nasit: I worked on the script part and displaying the API value in page and added Flex layout for News and stocks -->
 <!doctype html>
 
 <html>
@@ -90,6 +95,7 @@ fetch("https://finnhub.io/api/v1/news?category=general&token=cnkd071r01qiclq83k4
         console.log(element);
     });
     
+
     data["top_losers"].forEach(element => {
       let div = document.createElement("div");
         div.className = "stockblocks"
@@ -147,34 +153,41 @@ window.onload = function() { //Boris
     }, 10000); // Adjust overall interval as needed
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('topstockcotainers');
-  const nextBtn = document.querySelector('#topstocks .next');
-  const prevBtn = document.querySelector('#topstocks .prev');
+document.addEventListener('DOMContentLoaded', function() { //boris
+  // const container = document.getElementById('topstockcotainers'); 
+  // const nextBtn = document.querySelector('#topstocks .next');
+  // const prevBtn = document.querySelector('#topstocks .prev');
 
-  function smoothScrollBy(distance, duration) { //distance is the num of pixels to scroll 
-    let initialPosition = container.scrollLeft; //and duration is the time in ms over which the scroll should occur
-    let startTime = null;
+  document.querySelectorAll('.stock-container').forEach(container => {
+    const nextBtn = container.parentElement.querySelector('.next'); 
+    const prevBtn = container.parentElement.querySelector('.prev');
 
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      let timeElapsed = currentTime - startTime;
-      let progress = Math.min(timeElapsed / duration, 1); //it will calculate the current scroll position
+    function smoothScrollBy(distance, duration) {
+      let initialPosition = container.scrollLeft;
+      let startTime = null;
 
-      container.scrollLeft = initialPosition + (distance * progress);
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
 
-      if (timeElapsed < duration) window.requestAnimationFrame(animation);
+        container.scrollLeft = initialPosition + (distance * progress);
+
+        if (timeElapsed < duration) {
+          window.requestAnimationFrame(animation);
+        }
+      }
+
+      window.requestAnimationFrame(animation);
     }
 
-    window.requestAnimationFrame(animation); //for smooth animations
-  }
+    nextBtn.addEventListener('click', () => {
+      smoothScrollBy(container.clientWidth, 700); // Scroll right smoothly over 700ms
+    });
 
-  nextBtn.addEventListener('click', () => {
-    smoothScrollBy(container.clientWidth, 700); // Scroll right smoothly over 700ms
-  });
-
-  prevBtn.addEventListener('click', () => {
-    smoothScrollBy(-container.clientWidth, 700); // Scroll left smoothly over 700ms
+    prevBtn.addEventListener('click', () => {
+      smoothScrollBy(-container.clientWidth, 700); // Scroll left smoothly over 700ms
+    });
   });
 });
 
@@ -209,31 +222,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
     <div class="stock-section" id="topstocks">
-    <h1>Top preformas</h1>
+    <h1>Top performas</h1>
     <div class="stock-container" id="topstockcotainers"></div>
-    <button class="prev" aria-label="Scroll to previous stocks">&#10094;
+    <button class="prev">&#10094;
     </button> <!-- Left arrow for previous 6 stocks -->
-    <button class="next" aria-label="Scroll to next stocks">&#10095;
+    <button class="next" >&#10095;
     </button> <!-- Right arrow for next 6 stocks -->
     </div>
 
     <div class="stock-section" id="worststocks">
-      <h1>Worst preformas</h1>
+      <h1>Worst performas</h1>
       <div class="stock-container" id="worststockscotainers"></div>
+      <button class="prev">&#10094;
+    </button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next" >&#10095;
+    </button> <!-- Right arrow for next 6 stocks -->
     </div>
+
     <div class="stock-section" id="activestocks">
       <h1>Most active</h1>
       <div class="stock-container" id="activestockscotainers"></div>
+      <button class="prev">&#10094;
+    </button> <!-- Left arrow for previous 6 stocks -->
+    <button class="next" >&#10095;
+    </button> <!-- Right arrow for next 6 stocks -->
     </div>
 </div>
 
-<div id="news" >
- 
+<div  id="news" >
 </div>
 
 <div id="footer">     
   <footer>
-      <br><p><strong><A href="aboutme.html">Contact Us</A></strong> <br><br>
+      <br><p><strong><A href="aboutme.php">Contact Us</A></strong> <br><br>
           Address: 1385 Woodroffe Ave, Ottawa, ON K2G 1V8<br>
           Phone Number: 1-(888)-888-8888<br>
           Email:<a href="mailto:EasyMoney@gmail.com?subject=From%20About%20Me%20Page"> EasyMoney@gmail.com</a><br>
