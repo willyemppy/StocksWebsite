@@ -7,6 +7,9 @@ if (!isset($_SESSION["userID"])) {
   exit();
 }
  ?>
+
+ <!-- Work cotribution:
+Raj Nasit: I worked on the script part and displaying the API value in page and added Flex layout for News and stocks -->
 <!doctype html>
 
 <html>

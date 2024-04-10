@@ -5,13 +5,12 @@ if (!isset($_SESSION["userID"])) {
     exit();
 }
  ?>
-
+<!-- Work cotribution:
+Raj Nasit: I worked on the script part and displaying the API value in page and did a bit css for this page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>User Dashbord</title>
-<meta name="author" content="Raj Nasit">
-<meta name="description" content="About me page">
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <script>
     const socket = new WebSocket('wss://ws.finnhub.io?token=co1hgb9r01qgulhr8dr0co1hgb9r01qgulhr8drg');
