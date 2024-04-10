@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
       </div>
 
-<div id="stoks">
+<div id="stoks"> <!-- Boris -->
   
   
     <div class="stock-section" id="topstocks">
