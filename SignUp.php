@@ -3,7 +3,7 @@ session_start();
 //Emperor Anuku - Wrote PHP code to get input from HTML forms, validate input, and send to with database 
 //Emperor Anuku - Wrote the Javascript code to perform input validation on the form entries, using functions and regex
 
-/*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header. Used Emperor's php and 
+/*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header  and CSS for all those. Used Emperor's php and 
 validation (for password, email, username verification).*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

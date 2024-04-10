@@ -1,6 +1,5 @@
 <?php 
-//Emperor Anuku: PHP is written by Emperor Anuku, using session variables to capture which user is logged in. 
-//If Admin, display the admin panel button
+
 
 session_start(); 
 if (!isset($_SESSION["userID"])) {
@@ -12,7 +11,9 @@ $is_admin = in_array($_SESSION["username"], $admin_usernames);
  ?>
 <!-- Work cotribution:
 Raj Nasit: I worked on the script part and displaying the API value in page and did a bit css for this page
-David Fallows: Worked on the header, footer, nav elements of the page -->
+David Fallows: Worked on the header, footer, nav elements of the page and their CSS
+//Emperor Anuku: PHP is written by Emperor Anuku, using session variables to capture which user is logged in. If Admin, display the admin panel button
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

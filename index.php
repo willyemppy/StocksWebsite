@@ -1,12 +1,14 @@
 <?php 
-//Emperor Anuku - Wrote PHP code on this page
+
 session_start(); 
 
  ?>
 
  <!-- Work cotribution:
 Raj Nasit: I worked on the script part and displaying the API value in page and added Flex layout for News and stocks 
-David Fallows: Worked on the header, footer, nav bar, and visual aspects of the page with the CSS file.-->
+David Fallows: Worked on the header, footer, nav bar, and visual aspects of the page with the CSS file.
+Emperor Anuku - Wrote PHP code on this page
+Boris: Worked on designing stoks and two function for back and forth button in stocks panel-->
 
 <!doctype html>
 
