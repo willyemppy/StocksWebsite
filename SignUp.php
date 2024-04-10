@@ -1,6 +1,8 @@
 <?php
 session_start();
 //Written by Emperor Anuku
+/*David Fallows - Worked on the HTML part/front end, created the UI, nav, footer, and header. Used Emperor's php and 
+validation (for password, email, username verification).*/
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Form is submitted, process the data
     $username = trim($_POST["username"]);

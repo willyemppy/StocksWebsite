@@ -5,7 +5,9 @@ session_start();
  ?>
 
  <!-- Work cotribution:
-Raj Nasit: I worked on the script part and displaying the API value in page and added Flex layout for News and stocks -->
+Raj Nasit: I worked on the script part and displaying the API value in page and added Flex layout for News and stocks 
+David Fallows: Worked on the header, footer, nav bar, and visual aspects of the page with the CSS file.-->
+
 <!doctype html>
 
 <html>

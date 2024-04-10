@@ -47,9 +47,11 @@ if (!isset($_SESSION["userID"])) {
       </div> -->
       <h1 style="font-size: 250%; padding-top: 20px;"> Easy money</h1>
       
+      <!--David Fallows - did the nav bar-->
       <div id="nav">
         <nav class="menu">
             <a class="menulink" href="index.php">Home</a>
+            <a class="menulink" href="aboutme.php">About</a>
             <a class="menulink" href="SignUp.php">New Users</a>
             <a class="menulink" href="Login.php">Login</a>
         </nav>
@@ -100,6 +102,8 @@ My Name is Boris, I am an international student that enrolled in the BIT Net pro
 </div>
 </div>
 
+
+<!--David Fallows - wrote the footer-->
 <div id="footer">     
   <footer>
       <br><p><strong><A href="aboutme.php">Contact Us</A></strong> <br><br>
